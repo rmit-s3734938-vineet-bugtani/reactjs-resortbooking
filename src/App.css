@@ -154,7 +154,7 @@ h6 {
 }
 .roomsHero {
   background-image: url("./images/room-2.jpeg");
-  min-height: 60vh;
+  min-height: 70vh;
 }
 /* End of Hero */
 /* Banner */
@@ -162,38 +162,45 @@ h6 {
   display: inline-block;
   background: rgba(0, 0, 0, 0.5);
   color: var(--mainWhite);
-  padding: 2rem 1rem;
+  width: 80%;
+  padding: 3rem 0rem;
   text-align: center;
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
 }
 .banner h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 .banner div {
-  width: 10rem;
+  width: 8rem;
   height: 5px;
   background: var(--primaryColor);
-  margin: 1.7rem auto;
+  margin: 0 auto;
+  margin-bottom: 1rem;
 }
 .banner p {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
-@media screen and (min-width: 576px) {
+/* @media screen and (min-width: 631px) {
   .banner {
-    padding: 2rem 3rem;
+    width: 70%
   }
   .banner h1 {
     font-size: 3rem;
+    color: var(--primaryColor);
   }
-}
-@media screen and (min-width: 992px) {
+} */
+@media screen and (min-width: 1038px) {
   .banner {
-    padding: 2rem 6rem;
+    width: 60%
   }
   .banner h1 {
-    font-size: 4rem;
+    font-size: 3rem;
+    color: var(--offWhite);
+  }
+  .banner div {
+    width: 11rem;
   }
 }
 /* End of Banner */
@@ -225,7 +232,7 @@ h6 {
   text-align: center;
 }
 .services-center {
-  width: 90vw;
+  /* width: 100vw; */
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
@@ -242,8 +249,10 @@ h6 {
   letter-spacing: var(--mainSpacing);
 }
 .services p {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
+  text-align: center;
+  
 }
 @media screen and (min-width: 992px) {
   .services-center {
@@ -267,19 +276,17 @@ h6 {
   width: 80vw;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-row-gap: 2rem;
   grid-column-gap: 40px;
 }
 @media screen and (min-width: 776px) {
   .featured-rooms-center {
-    width: 90vw;
     grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   }
 }
 @media screen and (min-width: 992px) {
   .featured-rooms-center {
-    width: 95vw;
     max-width: 1170px;
   }
 }
@@ -435,17 +442,6 @@ h6 {
   grid-column-gap: 30px;
 }
 
-@media screen and (min-width: 776px) {
-  .roomslist-center {
-    width: 90vw;
-  }
-}
-@media screen and (min-width: 992px) {
-  .roomslist-center {
-    width: 95vw;
-    max-width: 1170px;
-  }
-}
 /* end of roomlist */
 /*  rooms fitler*/
 .filter-container {
