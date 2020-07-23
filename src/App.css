@@ -357,7 +357,7 @@ h6 {
 /* single room*/
 
 .single-room {
-  padding: 5rem 0 0 0;
+  padding: 2rem 0 2rem 0;
 }
 .single-room-images {
   width: 80vw;
@@ -373,13 +373,12 @@ h6 {
 }
 .single-room-info {
   width: 80vw;
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 2rem auto;
+  margin: 0rem auto;
 }
 .desc,
 .info {
   margin: 1rem 0;
+  width: 100%;
 }
 .desc h3 {
   text-transform: capitalize;
@@ -419,11 +418,11 @@ h6 {
     width: 95vw;
     max-width: 1170px;
   }
-  .single-room-info {
+  /* .single-room-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 2rem;
-  }
+  } */
   .info {
     padding-left: 3rem;
   }

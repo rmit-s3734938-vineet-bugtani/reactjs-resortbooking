@@ -4,20 +4,23 @@ import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
 import { RoomContext } from "../context";
+import StyledHero from "../components/StyledHero";
 
 export default class SingleRoom extends Component {
   constructor(props) {
     super(props);
-    // console.log(this.props.match.params.id);
     this.state = {
       id: this.props.match.params.id
     }
   }
   static contextType = RoomContext;
   render() {
-    const {getRoom} = this.context;
+    const { getRoom } = this.context;
+    console.log(this.state.id);
     const room = getRoom(this.state.id);
-    if(!room) {
+    console.log(room);
+    var [mainImg, ...defaultImgs] = [];
+    if (room === 'undefined' || room == null) {
       return (
         <div className="error">
           <h3>No such room found...</h3>
@@ -25,13 +28,30 @@ export default class SingleRoom extends Component {
         </div>
       )
     }
-    console.log(room);
+    else {
+      [mainImg, ...defaultImgs] = room.images;
+    }
     return (
-      <Hero hero="roomsHero">
-        <Banner title={room.name}>
-          <Link to="/rooms" className="btn-primary">Back to rooms</Link>
-        </Banner>
-      </Hero>
+      <>
+        <StyledHero img={mainImg}>
+          <Banner title={room.name}>
+            <Link to="/rooms" className="btn-primary">Back to rooms</Link>
+          </Banner>
+        </StyledHero>
+        <section className="single-room">
+          <div className="single-room-images">
+            {defaultImgs.map((item, index) => {
+              return <img key={index} src={item} alt={room.name} />;
+            })}
+          </div>
+        </section>
+        <div className="single-room-info">
+          <div className="desc">
+            <h3>Details</h3>
+            <p>{room.description}</p>
+          </div>
+        </div>
+      </>
     );
   }
 }
